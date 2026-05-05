@@ -1,0 +1,11 @@
+# AutoMagic 33 — robots.txt
+# https://automagic33.fr
+
+User-agent: *
+Allow: /
+
+# Pages à ne pas indexer
+Disallow: /404.html
+
+# Sitemap
+Sitemap: https://automagic33.fr/sitemap.xml
