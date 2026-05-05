@@ -8,4 +8,4 @@ Allow: /
 Disallow: /404.html
 
 # Sitemap
-Sitemap: https://automagic33.fr/sitemap.xml
+Sitemap: https://automagic33.com/sitemap.xml
