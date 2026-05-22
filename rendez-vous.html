@@ -1,0 +1,795 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- SEO -->
+  <title>Prendre Rendez-vous — AutoMagic 33 · Detailing Auto Gironde</title>
+  <meta name="description" content="Prenez rendez-vous en ligne avec AutoMagic 33 pour votre prestation de detailing auto à domicile en Gironde. Formulaire simple et rapide." />
+  <link rel="canonical" href="https://automagic33.com/rendez-vous.html" />
+
+  <!-- Open Graph -->
+  <meta property="og:type"        content="website" />
+  <meta property="og:url"         content="https://automagic33.com/rendez-vous.html" />
+  <meta property="og:title"       content="Rendez-vous — AutoMagic 33" />
+  <meta property="og:description" content="Réservez votre prestation de detailing auto à domicile en Gironde." />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,800;1,800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" type="image/png" href="favicon.png" sizes="192x192">
+
+  <style>
+    /* ===== PAGE RDV ===== */
+    .rdv-page { padding-top: 100px; padding-bottom: 5rem; }
+
+    .rdv-inner {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    /* ===== FORM GRID ===== */
+    .rdv-form { display: flex; flex-direction: column; gap: 2rem; margin-top: 2.5rem; }
+
+    .form-section {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 1.6rem 1.8rem;
+    }
+
+    .form-section-title {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 800;
+      font-size: 0.72rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 1.2rem;
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+
+    .form-section-title::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: var(--border);
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+
+    .form-group { display: flex; flex-direction: column; gap: 0.4rem; }
+
+    .form-group label {
+      font-size: 0.78rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--muted);
+      font-weight: 500;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      color: var(--text);
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.95rem;
+      padding: 0.7rem 1rem;
+      width: 100%;
+      transition: border-color 0.2s;
+      outline: none;
+      -webkit-appearance: none;
+      appearance: none;
+    }
+
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      border-color: var(--gold);
+    }
+
+    .form-group input::placeholder,
+    .form-group textarea::placeholder {
+      color: #444;
+    }
+
+    .form-group select {
+      cursor: pointer;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23888' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 1rem center;
+      padding-right: 2.5rem;
+    }
+
+    .form-group select option {
+      background: #1a1a1a;
+      color: var(--text);
+    }
+
+    .form-group select optgroup {
+      color: var(--gold);
+      font-style: normal;
+      font-weight: 700;
+      font-size: 0.8rem;
+      letter-spacing: 0.05em;
+    }
+
+    .form-group textarea { resize: vertical; min-height: 90px; }
+
+    /* ===== OPTIONS CHECKBOXES ===== */
+    .options-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.6rem;
+    }
+
+    .option-check {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.75rem;
+      padding: 0.75rem 1rem;
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      cursor: pointer;
+      transition: border-color 0.2s;
+      user-select: none;
+    }
+
+    .option-check:hover { border-color: rgba(255,214,0,0.3); }
+    .option-check.checked { border-color: var(--gold); background: rgba(255,214,0,0.04); }
+
+    .option-check input[type="checkbox"] {
+      width: 16px;
+      height: 16px;
+      min-width: 16px;
+      margin-top: 2px;
+      accent-color: var(--gold);
+      cursor: pointer;
+      padding: 0;
+    }
+
+    .option-check-text { display: flex; flex-direction: column; }
+
+    .option-check-name {
+      font-size: 0.88rem;
+      font-weight: 500;
+      color: var(--text);
+      line-height: 1.3;
+    }
+
+    .option-check-price {
+      font-size: 0.75rem;
+      color: var(--muted);
+      margin-top: 0.1rem;
+    }
+
+    /* Zone imprévu */
+    .imprevu-zone {
+      grid-column: 1 / -1;
+      margin-top: 0.2rem;
+      display: none;
+    }
+    .imprevu-zone.visible { display: block; }
+    .imprevu-zone textarea {
+      background: var(--surface2);
+      border: 1px solid rgba(255,214,0,0.3);
+      border-radius: var(--radius);
+      color: var(--text);
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.92rem;
+      padding: 0.7rem 1rem;
+      width: 100%;
+      resize: vertical;
+      min-height: 80px;
+      outline: none;
+    }
+    .imprevu-zone textarea:focus { border-color: var(--gold); }
+    .imprevu-zone label {
+      font-size: 0.75rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--gold);
+      display: block;
+      margin-bottom: 0.4rem;
+    }
+
+    /* ===== NOTICE INFO ===== */
+    .form-notice {
+      font-size: 0.82rem;
+      color: var(--muted);
+      background: rgba(255,214,0,0.05);
+      border: 1px solid rgba(255,214,0,0.15);
+      border-radius: var(--radius);
+      padding: 0.75rem 1rem;
+      line-height: 1.5;
+    }
+    .form-notice strong { color: var(--gold); }
+
+    /* ===== SUBMIT ===== */
+    .form-submit-wrap { display: flex; justify-content: center; }
+
+    .btn-submit {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 800;
+      font-style: italic;
+      font-size: 0.85rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      background: var(--gold);
+      color: #000;
+      border: none;
+      padding: 1rem 3rem;
+      border-radius: var(--radius);
+      cursor: pointer;
+      transition: background 0.2s, transform 0.15s;
+      width: 100%;
+      max-width: 360px;
+    }
+
+    .btn-submit:hover { background: #fff; transform: translateY(-2px); }
+    .btn-submit:disabled { opacity: 0.5; cursor: not-allowed; transform: none; }
+
+    /* ===== SUCCESS MESSAGE ===== */
+    .form-success {
+      display: none;
+      text-align: center;
+      padding: 3rem 2rem;
+      background: var(--surface);
+      border: 1px solid rgba(255,214,0,0.3);
+      border-radius: 8px;
+      margin-top: 2rem;
+    }
+    .form-success.visible { display: block; }
+    .form-success-icon { font-size: 3rem; margin-bottom: 1rem; }
+    .form-success h2 {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 800;
+      font-style: italic;
+      color: var(--gold);
+      font-size: 1.5rem;
+      margin-bottom: 0.75rem;
+    }
+    .form-success p { color: var(--muted); font-size: 0.95rem; line-height: 1.6; }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 640px) {
+      .form-row { grid-template-columns: 1fr; }
+      .options-grid { grid-template-columns: 1fr; }
+      .form-section { padding: 1.2rem 1.1rem; }
+    }
+
+    /* ===== VALIDATION ===== */
+    .required-star { color: var(--gold); }
+
+    .required-legend {
+      font-size: 0.78rem;
+      color: var(--muted);
+      margin-top: -1rem;
+      margin-bottom: 0.5rem;
+    }
+    .required-legend .required-star { color: var(--gold); font-size: 0.9em; }
+
+    .field-error {
+      display: none;
+      align-items: center;
+      gap: 0.5rem;
+      background: rgba(220, 38, 38, 0.1);
+      border: 1px solid rgba(220, 38, 38, 0.5);
+      border-radius: var(--radius);
+      color: #f87171;
+      font-size: 0.82rem;
+      padding: 0.6rem 0.9rem;
+      margin-top: 0.3rem;
+      line-height: 1.4;
+    }
+    .field-error.visible { display: flex; }
+    .field-error::before { content: '⚠'; font-size: 0.9em; flex-shrink: 0; }
+
+    .form-global-error {
+      display: none;
+      align-items: center;
+      gap: 0.75rem;
+      background: rgba(220, 38, 38, 0.12);
+      border: 1px solid rgba(220, 38, 38, 0.5);
+      border-radius: var(--radius);
+      color: #f87171;
+      font-size: 0.88rem;
+      padding: 0.9rem 1.1rem;
+      line-height: 1.5;
+      margin-bottom: 1rem;
+    }
+    .form-global-error.visible { display: flex; }
+    .form-global-error::before { content: '⚠'; font-size: 1.1em; flex-shrink: 0; }
+
+    .input-error,
+    .input-error:focus {
+      border-color: #dc2626 !important;
+      box-shadow: 0 0 0 2px rgba(220,38,38,0.15);
+    }
+
+    .option-check.check-error {
+      border-color: #dc2626 !important;
+      background: rgba(220,38,38,0.05) !important;
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAVIGATION -->
+<nav id="navbar">
+  <a href="index.html" class="nav-logo">AutoMagic</a>
+  <ul class="nav-links">
+    <li><a href="qui-sommes-nous.html">Qui sommes-nous</a></li>
+    <li><a href="infos.html">Infos</a></li>
+    <li><a href="tarifs.html">Tarifs</a></li>
+    <li><a href="contact.html">Contact</a></li>
+    <li><a href="rendez-vous.html" class="nav-cta nav-active">Rendez-vous</a></li>
+  </ul>
+  <button class="burger" id="burger" aria-label="Ouvrir le menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<div class="mobile-nav" id="mobileNav">
+  <a href="qui-sommes-nous.html">Qui sommes-nous</a>
+  <a href="infos.html">Infos</a>
+  <a href="tarifs.html">Tarifs</a>
+  <a href="contact.html">Contact</a>
+  <a href="rendez-vous.html" class="nav-active">Rendez-vous</a>
+</div>
+
+<!-- PAGE RDV -->
+<main class="rdv-page">
+  <div class="rdv-inner">
+    <p class="section-label reveal">Réservation</p>
+    <h1 class="section-title reveal">Prendre<br>rendez-vous</h1>
+    <p style="color: var(--muted); font-weight: 300; margin-top: 0.5rem;" class="reveal">
+      Remplissez le formulaire ci-dessous, je vous recontacte rapidement pour confirmer le créneau.
+    </p>
+
+    <p class="required-legend reveal" style="margin-top:1.2rem;"><span class="required-star">*</span> Champ obligatoire</p>
+    <!-- ERREUR GLOBALE -->
+    <div class="form-global-error" id="form-global-error">Veuillez corriger les champs indiqués avant d'envoyer votre demande.</div>
+    <!-- FORMULAIRE -->
+    <form
+      id="rdv-form"
+      class="rdv-form reveal"
+      action="https://api.web3forms.com/submit"
+      method="POST"
+      novalidate
+    >
+      <!-- Clé Web3Forms — à remplacer par votre clé sur web3forms.com -->
+      <input type="hidden" name="access_key" value="625d41f9-52b5-4ade-9235-78a148c4a29e" />
+      <input type="hidden" name="subject" value="Nouvelle demande de rendez-vous — AutoMagic 33" />
+      <input type="hidden" name="from_name" value="AutoMagic 33 — Formulaire RDV" />
+      <input type="checkbox" name="botcheck" style="display:none" />
+
+      <!-- 1. IDENTITÉ -->
+      <div class="form-section">
+        <div class="form-section-title">👤 Vos coordonnées</div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="prenom">Prénom <span class="required-star">*</span></label>
+            <input type="text" id="prenom" name="prenom" placeholder="Jean" />
+          </div>
+          <div class="form-group">
+            <label for="nom">Nom <span class="required-star">*</span></label>
+            <input type="text" id="nom" name="nom" placeholder="Dupont" />
+          </div>
+        </div>
+        <div class="form-row" style="margin-top:1rem">
+          <div class="form-group">
+            <label for="telephone">Téléphone <span class="required-star">*</span></label>
+            <input type="tel" id="telephone" name="telephone" placeholder="06 12 34 56 78" />
+          </div>
+          <div class="form-group">
+            <label for="email">Email <span class="required-star">*</span></label>
+            <input type="email" id="email" name="email" placeholder="jean@exemple.fr" />
+          </div>
+        </div>
+        <div class="form-group" style="margin-top:1rem">
+          <label for="adresse">Adresse de la prestation <span class="required-star">*</span></label>
+          <input type="text" id="adresse" name="adresse" placeholder="12 rue des Acacias, 33000 Bordeaux" />
+        </div>
+      </div>
+
+      <!-- 2. VÉHICULE -->
+      <div class="form-section">
+        <div class="form-section-title">🚗 Votre véhicule</div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="vehicule">Modèle ou immatriculation <span class="required-star">*</span></label>
+            <input type="text" id="vehicule" name="vehicule" placeholder="Renault Clio / AB-123-CD" />
+          </div>
+          <div class="form-group">
+            <label for="date">Date souhaitée</label>
+            <input type="date" id="date" name="date_souhaitee" />
+          </div>
+        </div>
+      </div>
+
+      <!-- 3. PRESTATION -->
+      <div class="form-section">
+        <div class="form-section-title">✨ Prestation souhaitée</div>
+        <div class="form-group">
+          <label for="prestation">Formule <span class="required-star">*</span></label>
+          <select id="prestation" name="prestation">
+            <option value="" disabled selected>— Choisissez une formule —</option>
+            <optgroup label="🛋 Intérieures">
+              <option value="Confort (40€)">Confort — 40€ · Dépoussiérage + aspiration + plastiques</option>
+              <option value="Prestige (50€)">Prestige — 50€ · Confort + shampouinage sièges + désodorisation</option>
+            </optgroup>
+            <optgroup label="🚿 Extérieures">
+              <option value="Extérieure (30€)">Extérieure — 30€ · Lavage jantes + carrosserie + séchage</option>
+              <option value="Déperlante (40€)">Déperlante — 40€ · Extérieure + cire déperlante effet gloss</option>
+            </optgroup>
+            <optgroup label="⭐ Complètes">
+              <option value="Complète (60€)">Complète — 60€ · Confort + Extérieure</option>
+              <option value="Intermédiaire (70€)">Intermédiaire — 70€ · Prestige + Extérieure (ou Confort + Déperlante)</option>
+              <option value="Concession (80€)">Concession — 80€ · Prestige + Déperlante (traitement complet)</option>
+            </optgroup>
+            <optgroup label="🔧 Sur mesure">
+              <option value="Detailing personnalisé (sur devis)">Detailing personnalisé — Sur devis</option>
+              <option value="Canapés & tapisseries (sur devis)">Canapés &amp; tapisseries — Sur devis</option>
+            </optgroup>
+          </select>
+        </div>
+
+        <!-- Detailing personnalisé : champ texte -->
+        <div id="perso-zone" class="form-group" style="margin-top:1rem; display:none;">
+          <label for="details_perso">Décrivez votre besoin <span class="required-star">*</span></label>
+          <textarea id="details_perso" name="details_personnalise" placeholder="Sortie de grange, polissage, démontage sièges, nettoyage canapé… décrivez votre projet, je vous recontacte avec un devis."></textarea>
+        </div>
+      </div>
+
+      <!-- 4. OPTIONS -->
+      <div class="form-section">
+        <div class="form-section-title">➕ Options supplémentaires</div>
+        <p style="font-size:0.82rem; color:var(--muted); margin-bottom:1rem;">Sélectionnez les options souhaitées (facultatif).</p>
+
+        <div class="options-grid">
+
+          <label class="option-check" id="lbl-optiques">
+            <input type="checkbox" name="option_optiques" value="Rénovation des optiques (35€/paire)" onchange="toggleCheck(this)" />
+            <span class="option-check-text">
+              <span class="option-check-name">Rénovation des optiques</span>
+              <span class="option-check-price">35 € / paire</span>
+            </span>
+          </label>
+
+          <label class="option-check" id="lbl-decontam">
+            <input type="checkbox" name="option_decontamination" value="Décontamination chimique (10€)" onchange="toggleCheck(this)" />
+            <span class="option-check-text">
+              <span class="option-check-name">Décontamination chimique</span>
+              <span class="option-check-price">10 €</span>
+            </span>
+          </label>
+
+          <label class="option-check" id="lbl-poils">
+            <input type="checkbox" name="option_poils" value="Poils d'animaux (10€)" onchange="toggleCheck(this)" />
+            <span class="option-check-text">
+              <span class="option-check-name">Poils d'animaux</span>
+              <span class="option-check-price">10 €</span>
+            </span>
+          </label>
+
+          <label class="option-check" id="lbl-moteur">
+            <input type="checkbox" name="option_baie_moteur" value="Baie moteur (20€)" onchange="toggleCheck(this)" />
+            <span class="option-check-text">
+              <span class="option-check-name">Baie moteur</span>
+              <span class="option-check-price">20 €</span>
+            </span>
+          </label>
+
+          <label class="option-check" id="lbl-gabarit">
+            <input type="checkbox" name="option_grand_gabarit" value="Grands gabarits (10€+)" onchange="toggleCheck(this)" />
+            <span class="option-check-text">
+              <span class="option-check-name">Grand gabarit</span>
+              <span class="option-check-price">10 € et plus · +5 places / utilitaire</span>
+            </span>
+          </label>
+
+          <label class="option-check" id="lbl-imprevu">
+            <input type="checkbox" name="option_imprevu" value="Imprévu (à partir de 10€)" id="cb-imprevu" onchange="toggleCheck(this); toggleImprevu(this)" />
+            <span class="option-check-text">
+              <span class="option-check-name">Situation imprévue</span>
+              <span class="option-check-price">À partir de 10 € · Vomi, moisissure, cas extrême…</span>
+            </span>
+          </label>
+
+          <!-- Zone imprévu — pleine largeur -->
+          <div class="imprevu-zone" id="imprevu-zone">
+            <label for="details_imprevu">Décrivez la situation <span class="required-star">*</span></label>
+            <textarea id="details_imprevu" name="details_imprevu" placeholder="Décrivez la situation en détail pour que je puisse préparer l'intervention au mieux…"></textarea>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- 5. INFOS ACCÈS -->
+      <div class="form-section">
+        <div class="form-section-title">⚡ Conditions d'accès</div>
+        <div class="form-notice">
+          <strong>Rappel :</strong> chaque prestation nécessite un accès à l'électricité <strong> obligatoire</strong> à moins de 50 m. Un accès à l'eau est recommandé mais non obligatoire pour les prestations extérieures.
+        </div>
+        <div style="margin-top:1rem; display:flex; flex-direction:column; gap:0.5rem;">
+          <label class="option-check" id="lbl-elec">
+            <input type="checkbox" name="acces_electricite" value="Oui" onchange="toggleCheck(this)" />
+            <span class="option-check-text">
+              <span class="option-check-name">Accès à l'électricité à moins de 50 m <span class="required-star">*</span></span>
+            </span>
+          </label>
+          <label class="option-check" id="lbl-eau">
+            <input type="checkbox" name="acces_eau" value="Oui" onchange="toggleCheck(this)" />
+            <span class="option-check-text">
+              <span class="option-check-name">Accès à l'eau à moins de 10m</span>
+            </span>
+          </label>
+        </div>
+      </div>
+
+      <!-- 6. MESSAGE LIBRE -->
+      <div class="form-section">
+        <div class="form-section-title">💬 Message complémentaire</div>
+        <div class="form-group">
+          <label for="message">Informations supplémentaires (facultatif)</label>
+          <textarea id="message" name="message" placeholder="Horaires préférés, contraintes particulières, état général du véhicule…"></textarea>
+        </div>
+        <div style="margin-top:1rem;">
+          <div class="form-group">
+            <label for="decouverte">Comment avez-vous connu AutoMagic 33 ?</label>
+            <select id="decouverte" name="decouverte">
+              <option value="" disabled selected>— Optionnel —</option>
+              <option value="Instagram">Instagram</option>
+              <option value="TikTok">TikTok</option>
+              <option value="Google">Google</option>
+              <option value="Bouche-à-oreille">Bouche-à-oreille</option>
+              <option value="Autre">Autre</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <!-- SUBMIT -->
+      <div class="form-submit-wrap">
+        <button type="submit" class="btn-submit" id="submit-btn">
+          Envoyer ma demande →
+        </button>
+      </div>
+
+    </form>
+
+    <!-- MESSAGE DE SUCCÈS -->
+    <div class="form-success" id="form-success">
+      <div class="form-success-icon">🎉</div>
+      <h2>Demande envoyée !</h2>
+      <p>Merci pour votre message. Je vous recontacterai très rapidement pour confirmer le rendez-vous.</p>
+      <p style="margin-top:0.75rem;">En attendant, vous pouvez aussi me joindre directement :<br>
+        <a href="tel:0764436728" style="color:var(--gold);">07 64 43 67 28</a>
+      </p>
+    </div>
+
+  </div>
+</main>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-main">
+    <!-- Marque -->
+    <div class="footer-brand">
+      <a href="index.html" class="footer-logo">AutoMagic</a>
+      <p class="footer-tagline">Detailing auto à domicile en Gironde. Intérieur, extérieur, options sur mesure.</p>
+      <span class="footer-badge">✦ Gironde · 33</span>
+    </div>
+
+    <!-- Navigation -->
+    <div class="footer-col">
+      <div class="footer-col-title">Navigation</div>
+      <a href="index.html">Accueil</a>
+      <a href="qui-sommes-nous.html">Qui sommes-nous</a>
+      <a href="infos.html">Infos</a>
+      <a href="tarifs.html">Tarifs</a>
+      <a href="contact.html">Contact</a>
+      <a href="rendez-vous.html">Prendre rendez-vous</a>
+    </div>
+
+    <!-- Prestations -->
+    <div class="footer-col">
+      <div class="footer-col-title">Prestations</div>
+      <span>Nettoyage intérieur</span>
+      <span>Lavage extérieur</span>
+      <span>Formules complètes</span>
+      <span>Rénovation optiques</span>
+      <span>Detailing sur mesure</span>
+    </div>
+
+    <!-- Contact -->
+    <div class="footer-col">
+      <div class="footer-col-title">Contact</div>
+      <a href="tel:0764436728">07 64 43 67 28</a>
+      <a href="mailto:33automagic@gmail.com">33automagic@gmail.com</a>
+      <a href="https://www.instagram.com/automagic_33/" target="_blank" rel="noopener">Instagram</a>
+      <a href="https://www.tiktok.com/@automagic33" target="_blank" rel="noopener">TikTok</a>
+      <a href="https://www.facebook.com/people/Auto-Magic/61582766131972/" target="_blank" rel="noopener">Facebook</a>
+      <a href="https://maps.app.goo.gl/5RrxEkA9PpwBNwDk7" target="_blank" rel="noopener">Google Maps</a>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <span class="footer-copy">© 2025 AutoMagic 33 · Cestas, Gironde</span>
+    <div class="footer-bottom-links">
+      <a href="sitemap.xml">Plan du site</a>
+    </div>
+  </div>
+</footer>
+
+<script src="main.js"></script>
+<script>
+  // === Toggle style checkbox ===
+  function toggleCheck(cb) {
+    const lbl = cb.closest('.option-check');
+    if (lbl) lbl.classList.toggle('checked', cb.checked);
+  }
+
+  // === Affichage zone imprévu ===
+  function toggleImprevu(cb) {
+    const zone = document.getElementById('imprevu-zone');
+    if (zone) zone.classList.toggle('visible', cb.checked);
+    const ta = document.getElementById('details_imprevu');
+    if (ta) ta.required = cb.checked;
+  }
+
+  // === Affichage zone détails perso ===
+  document.getElementById('prestation').addEventListener('change', function() {
+    const persoZone = document.getElementById('perso-zone');
+    const ta = document.getElementById('details_perso');
+    const isPerso = this.value.includes('personnalisé') || this.value.includes('tapisseries');
+    persoZone.style.display = isPerso ? 'flex' : 'none';
+    ta.required = isPerso;
+  });
+
+  // === Soumission Web3Forms ===
+  const form = document.getElementById('rdv-form');
+  const successDiv = document.getElementById('form-success');
+  const submitBtn = document.getElementById('submit-btn');
+
+  // === Validation ===
+  function showError(fieldId, msg) {
+    const field = document.getElementById(fieldId);
+    if (!field) return;
+    field.classList.add('input-error');
+    let errDiv = document.getElementById('err-' + fieldId);
+    if (!errDiv) {
+      errDiv = document.createElement('div');
+      errDiv.id = 'err-' + fieldId;
+      errDiv.className = 'field-error';
+      field.parentNode.appendChild(errDiv);
+    }
+    errDiv.textContent = msg;
+    errDiv.classList.add('visible');
+  }
+
+  function clearError(fieldId) {
+    const field = document.getElementById(fieldId);
+    if (!field) return;
+    field.classList.remove('input-error');
+    const errDiv = document.getElementById('err-' + fieldId);
+    if (errDiv) errDiv.classList.remove('visible');
+  }
+
+  function showCheckError(lblId, msg) {
+    const lbl = document.getElementById(lblId);
+    if (!lbl) return;
+    lbl.classList.add('check-error');
+    let errDiv = document.getElementById('err-' + lblId);
+    if (!errDiv) {
+      errDiv = document.createElement('div');
+      errDiv.id = 'err-' + lblId;
+      errDiv.className = 'field-error';
+      lbl.parentNode.insertBefore(errDiv, lbl.nextSibling);
+    }
+    errDiv.textContent = msg;
+    errDiv.classList.add('visible');
+  }
+
+  function clearCheckError(lblId) {
+    const lbl = document.getElementById(lblId);
+    if (!lbl) return;
+    lbl.classList.remove('check-error');
+    const errDiv = document.getElementById('err-' + lblId);
+    if (errDiv) errDiv.classList.remove('visible');
+  }
+
+  // Clear errors on input
+  ['prenom','nom','telephone','email','adresse','vehicule','prestation'].forEach(id => {
+    const el = document.getElementById(id);
+    if (el) el.addEventListener('input', () => clearError(id));
+    if (el && el.tagName === 'SELECT') el.addEventListener('change', () => clearError(id));
+  });
+  document.getElementById('lbl-elec').querySelector('input').addEventListener('change', () => clearCheckError('lbl-elec'));
+
+  function validateForm() {
+    let valid = true;
+    const required = [
+      { id: 'prenom', msg: 'Veuillez saisir votre prénom.' },
+      { id: 'nom', msg: 'Veuillez saisir votre nom.' },
+      { id: 'telephone', msg: 'Veuillez saisir votre numéro de téléphone.' },
+      { id: 'email', msg: 'Veuillez saisir une adresse email valide.' },
+      { id: 'adresse', msg: 'Veuillez saisir l\'adresse de la prestation.' },
+      { id: 'vehicule', msg: 'Veuillez indiquer le modèle ou l\'immatriculation du véhicule.' },
+    ];
+    required.forEach(({ id, msg }) => {
+      const el = document.getElementById(id);
+      if (!el) return;
+      const val = el.value.trim();
+      if (!val || (el.type === 'email' && !/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(val))) {
+        showError(id, msg);
+        valid = false;
+      } else {
+        clearError(id);
+      }
+    });
+    // Prestation
+    const prest = document.getElementById('prestation');
+    if (!prest.value) { showError('prestation', 'Veuillez choisir une formule.'); valid = false; }
+    else clearError('prestation');
+    // Electricité
+    const elec = document.getElementById('lbl-elec').querySelector('input');
+    if (!elec.checked) { showCheckError('lbl-elec', 'L\'accès à l\'électricité est obligatoire pour toute prestation.'); valid = false; }
+    else clearCheckError('lbl-elec');
+    return valid;
+  }
+
+  form.addEventListener('submit', async function(e) {
+    e.preventDefault();
+    const globalErr = document.getElementById('form-global-error');
+    if (!validateForm()) {
+      globalErr.classList.add('visible');
+      globalErr.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      return;
+    }
+    globalErr.classList.remove('visible');
+    submitBtn.disabled = true;
+    submitBtn.textContent = 'Envoi en cours…';
+
+    const data = new FormData(form);
+
+    try {
+      const res = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        body: data
+      });
+      const json = await res.json();
+
+      if (json.success) {
+        form.style.display = 'none';
+        successDiv.classList.add('visible');
+        window.scrollTo({ top: successDiv.offsetTop - 120, behavior: 'smooth' });
+      } else {
+        alert('Une erreur est survenue. Merci de réessayer ou de nous contacter directement.');
+        submitBtn.disabled = false;
+        submitBtn.textContent = 'Envoyer ma demande →';
+      }
+    } catch (err) {
+      alert('Erreur réseau. Merci de réessayer ou de nous contacter directement.');
+      submitBtn.disabled = false;
+      submitBtn.textContent = 'Envoyer ma demande →';
+    }
+  });
+</script>
+</body>
+</html>
