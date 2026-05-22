@@ -424,6 +424,7 @@ nav {
   padding: 0.4rem;
   width: fit-content;
   flex-wrap: wrap;
+  max-width: 100%;
 }
 
 .tab-btn {
@@ -1018,6 +1019,11 @@ footer {
 
   /* Infos : forcer 2 colonnes max sur tablette */
   .infos-grid { grid-template-columns: repeat(2, 1fr); }
+
+  /* Tarifs tabs — déjà en flex-wrap, on force la largeur complète */
+  .tarifs-tabs {
+    width: 100%;
+  }
 }
 
 /* Mobile */
@@ -1043,16 +1049,26 @@ footer {
   .contact-links-row2 { flex-direction: column; align-items: stretch; }
   .contact-links-row2 .contact-card { width: 100%; max-width: none; }
 
-  /* Tarifs tabs scroll horizontal */
+  /* Tarifs tabs — grille 2 colonnes sur mobile */
   .tarifs-tabs {
-    flex-wrap: nowrap;
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.4rem;
     width: 100%;
-    scrollbar-width: none;
+    flex-wrap: unset;
+    overflow: visible;
   }
-  .tarifs-tabs::-webkit-scrollbar { display: none; }
-  .tab-btn { flex-shrink: 0; }
+  .tab-btn {
+    flex-shrink: unset;
+    width: 100%;
+    text-align: center;
+    padding: 0.75rem 0.5rem;
+    font-size: 0.75rem;
+    border-radius: 4px;
+  }
+  .tab-btn.active {
+    grid-column: unset;
+  }
 
   /* Footer */
   .footer-main { grid-template-columns: 1fr; padding: 2.5rem 1.5rem; gap: 2rem; }
