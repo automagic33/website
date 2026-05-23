@@ -26,11 +26,21 @@
 
 <!-- NAVIGATION -->
 <nav id="navbar">
-  <a href="index.html" class="nav-logo">AutoMagic</a>
+  <a href="index.html" class="nav-logo"><img src="logo.png" alt="AutoMagic 33" class="nav-logo-img"><span class="nav-logo-sep"></span>AutoMagic</a>
   <ul class="nav-links">
     <li><a href="qui-sommes-nous.html">Qui sommes-nous</a></li>
     <li><a href="infos.html">Infos</a></li>
-    <li><a href="tarifs.html">Tarifs</a></li>
+    <li class="nav-dropdown-parent">
+      <a href="tarifs.html?tab=interieures" class="nav-dropdown-trigger">Tarifs <svg class="drop-arrow" width="10" height="6" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></a>
+      <div class="nav-dropdown">
+        <a href="tarifs.html?tab=interieures"><span class="drop-bullet"></span>Intérieures</a>
+        <a href="tarifs.html?tab=exterieures"><span class="drop-bullet"></span>Extérieures</a>
+        <a href="tarifs.html?tab=completes"><span class="drop-bullet"></span>Complètes</a>
+        <a href="tarifs.html?tab=detailing"><span class="drop-bullet"></span>Detailing &amp; Rénovation</a>
+        <a href="tarifs.html?tab=options"><span class="drop-bullet"></span>Options</a>
+        <a href="tarifs.html?tab=autre"><span class="drop-bullet"></span>Canapés &amp; Tapis</a>
+      </div>
+    </li>
     <li><a href="contact.html" class="nav-active">Contact</a></li>
     <li><a href="rendez-vous.html" class="nav-cta">Rendez-vous</a></li>
   </ul>
@@ -115,7 +125,7 @@
   <div class="footer-main">
     <!-- Marque -->
     <div class="footer-brand">
-      <a href="index.html" class="footer-logo">AutoMagic</a>
+      <a href="index.html"><img src="logo.png" alt="AutoMagic 33" class="footer-logo-img"></a><a href="index.html" class="footer-logo">AutoMagic</a>
       <p class="footer-tagline">Detailing auto à domicile en Gironde. Intérieur, extérieur, options sur mesure.</p>
       <span class="footer-badge">✦ Gironde · 33</span>
     </div>
@@ -156,6 +166,9 @@
   <div class="footer-bottom">
     <span class="footer-copy">© 2025 AutoMagic 33 · Cestas, Gironde</span>
     <div class="footer-bottom-links">
+      <a href="mentions-legales.html">Mentions légales</a>
+      <a href="politique-confidentialite.html">Confidentialité</a>
+      <a href="cgv.html">CGV</a>
       <a href="sitemap.xml">Plan du site</a>
     </div>
   </div>
