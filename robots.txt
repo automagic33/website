@@ -1,5 +1,5 @@
 # AutoMagic 33 — robots.txt
-# https://automagic33.fr
+# https://automagic33.com
 
 User-agent: *
 Allow: /
