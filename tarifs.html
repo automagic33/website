@@ -3,310 +3,475 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-  <!-- SEO -->
-  <title>Tarifs — AutoMagic 33 · Formules Detailing Auto à Domicile</title>
-  <meta name="description" content="Découvrez nos formules de detailing à domicile : nettoyage intérieur dès 40€, extérieur dès 30€, formules complètes dès 60€. Options et detailing sur-mesure disponibles. Gironde." />
+  <title>Tarifs — AutoMagic 33 · Esthétique Automobile Gironde</title>
+  <meta name="description" content="Tarifs AutoMagic 33 : nettoyage intérieur dès 60€, extérieur dès 50€, rénovation phares 55€/paire, ciel de toit à partir de 170€. Vitres teintées, déflocage, covering, CarPlay, leds, personnalisation sur devis. Bordeaux & Gironde." />
   <link rel="canonical" href="https://automagic33.com/tarifs.html" />
-
-  <!-- Open Graph -->
-  <meta property="og:type"        content="website" />
-  <meta property="og:url"         content="https://automagic33.com/tarifs.html" />
-  <meta property="og:title"       content="Tarifs Detailing — AutoMagic 33" />
-  <meta property="og:description" content="Formules de detailing à domicile : intérieur dès 40€, extérieur dès 30€, complètes dès 60€. Devis gratuit." />
-
-  <!-- Fonts -->
+  <link rel="icon" type="image/png" href="favicon.png" sizes="192x192">
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,800;1,800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
-  <link rel="icon" type="image/png" href="favicon.png" sizes="192x192">
+  <style>
+    .tarifs-category-sep {
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+      margin-bottom: 1.4rem;
+      margin-top: 0.2rem;
+    }
+    .tarifs-cat-icon { font-size: 1.1rem; }
+    .tarifs-cat-label {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 800;
+      font-size: 0.85rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--gold);
+      white-space: nowrap;
+    }
+    .tarifs-cat-line {
+      flex: 1;
+      height: 1px;
+      background: linear-gradient(to right, rgba(255,214,0,0.35), transparent);
+    }
+  </style>
 </head>
 <body>
 
-<!-- NAVIGATION -->
 <nav id="navbar">
   <a href="index.html" class="nav-logo"><img src="logo.png" alt="AutoMagic 33" class="nav-logo-img"><span class="nav-logo-sep"></span>AutoMagic</a>
-  <ul class="nav-links">
-    <li><a href="qui-sommes-nous.html">Qui sommes-nous</a></li>
-    <li><a href="infos.html">Infos</a></li>
+    <ul class="nav-links">
+    <li><a href="qui-sommes-nous.html">À propos</a></li>
     <li><a href="galerie.html">Galerie</a></li>
     <li class="nav-dropdown-parent">
-      <a href="tarifs.html?tab=interieures" class="nav-dropdown-trigger nav-active">Tarifs <svg class="drop-arrow" width="10" height="6" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></a>
+      <a href="tarifs.html" class="nav-dropdown-trigger nav-active">Tarifs <svg class="drop-arrow" width="10" height="6" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></a>
       <div class="nav-dropdown">
-        <a href="tarifs.html?tab=interieures"><span class="drop-bullet"></span>Intérieures</a>
-        <a href="tarifs.html?tab=exterieures"><span class="drop-bullet"></span>Extérieures</a>
-        <a href="tarifs.html?tab=completes"><span class="drop-bullet"></span>Complètes</a>
-        <a href="tarifs.html?tab=detailing"><span class="drop-bullet"></span>Detailing &amp; Rénovation</a>
-        <a href="tarifs.html?tab=options"><span class="drop-bullet"></span>Options</a>
-        <a href="tarifs.html?tab=autre"><span class="drop-bullet"></span>Canapés &amp; Tapis</a>
+        <a href="tarifs.html#nettoyage"><span class="drop-bullet"></span>Nettoyage & Detailing</a>
+        <a href="tarifs.html#renovation"><span class="drop-bullet"></span>Rénovation de phares</a>
+        <a href="tarifs.html#vitres"><span class="drop-bullet"></span>Vitres teintées</a>
+        <a href="tarifs.html#deflocage"><span class="drop-bullet"></span>Déflocage & désiglage</a>
+        <a href="tarifs.html#cieldetoit"><span class="drop-bullet"></span>Ciel de toit</a>
+        <a href="tarifs.html#personnalisation"><span class="drop-bullet"></span>Personnalisation</a>
       </div>
     </li>
+    <li><a href="faq.html">FAQ</a></li>
     <li><a href="contact.html">Contact</a></li>
     <li><a href="rendez-vous.html" class="nav-cta">Rendez-vous</a></li>
-  </ul>
-  <button class="burger" id="burger" aria-label="Ouvrir le menu">
-    <span></span><span></span><span></span>
-  </button>
+ </ul>
+ <button class="burger" id="burger" aria-label="Ouvrir le menu"><span></span><span></span><span></span></button>
 </nav>
-
 <div class="mobile-nav" id="mobileNav">
-  <a href="qui-sommes-nous.html">Qui sommes-nous</a>
-  <a href="infos.html">Infos</a>
+  <a href="qui-sommes-nous.html">À propos</a>
+  <a href="galerie.html">Galerie</a>
   <a href="tarifs.html" class="nav-active">Tarifs</a>
+  <a href="faq.html">FAQ</a>
   <a href="contact.html">Contact</a>
   <a href="rendez-vous.html">Rendez-vous</a>
 </div>
 
-<!-- TARIFS -->
 <main class="tarifs-page">
   <div class="section-inner-page">
     <div class="tarifs-inner">
-      <p class="section-label reveal">Formules</p>
+      <p class="section-label reveal">Formules & tarifs</p>
       <h1 class="section-title reveal">Nos tarifs</h1>
 
-      <!-- ONGLETS -->
       <div class="tarifs-tabs reveal">
-        <button class="tab-btn active" onclick="showTab('interieures', this)">Intérieures</button>
-        <button class="tab-btn" onclick="showTab('exterieures', this)">Extérieures</button>
-        <button class="tab-btn" onclick="showTab('completes', this)">Complètes</button>
-        <button class="tab-btn" onclick="showTab('detailing', this)">Detailing &amp; Rénovation</button>
-        <button class="tab-btn" onclick="showTab('options', this)">Options</button>
-        <button class="tab-btn" onclick="showTab('autre', this)">Canapés &amp; Tapis</button>
+        <button class="tab-btn active" onclick="showTab('nettoyage', this)">Nettoyage & Detailing</button>
+        <button class="tab-btn" onclick="showTab('renovation', this)">Rénovation phares</button>
+        <button class="tab-btn" onclick="showTab('vitres', this)">Vitres teintées</button>
+        <button class="tab-btn" onclick="showTab('deflocage', this)">Déflocage & désiglage</button>
+        <button class="tab-btn" onclick="showTab('cieldetoit', this)">Ciel de toit</button>
+        <button class="tab-btn" onclick="showTab('personnalisation', this)">Personnalisation</button>
       </div>
 
-      <!-- INTÉRIEURES -->
-      <div class="tab-content active" id="tab-interieures">
+      <div class="tab-content active" id="tab-nettoyage">
+        <div class="tarifs-category-sep">
+          <span class="tarifs-cat-label">Intérieur</span>
+          <span class="tarifs-cat-line"></span>
+        </div>
         <div class="formule-grid">
           <div class="formule-card">
             <div class="formule-name">Confort</div>
-            <div class="formule-price">40€<span>/prestation</span></div>
-            <div class="formule-duration">⏱ Durée moyenne : 2h - 2h30</div>
+            <div class="formule-price">60€<span>/prestation</span></div>
+            <div class="formule-duration">⏱ Durée moyenne : 2h – 2h30</div>
             <ul class="formule-items">
               <li>Dépoussiérage et aspiration de l'habitacle</li>
               <li>Nettoyage et rénovation des plastiques</li>
-              <li>Nettoyage des plastiques</li>
             </ul>
           </div>
           <div class="formule-card featured">
             <div class="formule-badge">Recommandé</div>
             <div class="formule-name">Prestige</div>
-            <div class="formule-price">50€<span>/prestation</span></div>
-            <div class="formule-duration">⏱ Durée moyenne : 3h - 3h30</div>
+            <div class="formule-price">70€<span>/prestation</span></div>
+            <div class="formule-duration">⏱ Durée moyenne : 3h – 3h30</div>
             <ul class="formule-items">
               <li>Formule Confort incluse</li>
-              <li>Shampouinage des sièges et/ou nettoyage et protection des cuirs</li>
+              <li>Shampouinage sièges et/ou entretien cuir</li>
               <li>Désodorisation de l'habitacle</li>
             </ul>
           </div>
         </div>
-      </div>
 
-      <!-- EXTÉRIEURES -->
-      <div class="tab-content" id="tab-exterieures">
+        <div class="tarifs-category-sep" style="margin-top:2.5rem;">
+          <span class="tarifs-cat-label">Extérieur</span>
+          <span class="tarifs-cat-line"></span>
+        </div>
         <div class="formule-grid">
           <div class="formule-card">
             <div class="formule-name">Extérieure</div>
-            <div class="formule-price">30€<span>/prestation</span></div>
+            <div class="formule-price">50€<span>/prestation</span></div>
             <div class="formule-duration">⏱ Durée moyenne : 1h – 1h30</div>
             <ul class="formule-items">
               <li>Nettoyage des jantes</li>
-              <li>Prélavage du véhicule</li>
-              <li>Lavage manuel de la carrosserie</li>
-              <li>Séchage du véhicule</li>
-              <li>Rénovation des pneumatiques et plastiques extérieurs</li>
+              <li>Prélavage & lavage manuel carrosserie</li>
+              <li>Séchage</li>
+              <li>Rénovation pneumatiques et plastiques ext.</li>
             </ul>
           </div>
           <div class="formule-card featured">
             <div class="formule-badge">Recommandé</div>
             <div class="formule-name">Déperlante</div>
-            <div class="formule-price">40€<span>/prestation</span></div>
-            <div class="formule-duration">⏱ Durée moyenne : 1h15 - 1h45</div>
+            <div class="formule-price">60€<span>/prestation</span></div>
+            <div class="formule-duration">⏱ Durée moyenne : 1h15 – 1h45</div>
             <ul class="formule-items">
               <li>Formule Extérieure incluse</li>
-              <li>Cire déperlance sur l'entièreté de la carrosserie</li>
-              <li>Déperlance importante et effet "gloss"</li>
-              <li>Protège des intempéries et facilite les prochains nettoyages</li>
+              <li>Cire déperlante carrosserie complète</li>
+              <li>Effet gloss & protection intempéries</li>
             </ul>
           </div>
         </div>
-      </div>
 
-      <!-- COMPLÈTES -->
-      <div class="tab-content" id="tab-completes">
+        <div class="tarifs-category-sep" style="margin-top:2.5rem;">
+          <span class="tarifs-cat-label">Formules complètes</span>
+          <span class="tarifs-cat-line"></span>
+        </div>
         <div class="formule-grid">
           <div class="formule-card">
             <div class="formule-name">Complète</div>
-            <div class="formule-price">60€<span>/prestation</span></div>
+            <div class="formule-price">100€<span>/prestation</span></div>
             <div class="formule-duration">⏱ Durée moyenne : 3h – 3h30</div>
             <ul class="formule-items">
-              <li>Formule Confort (intérieure)</li>
+              <li>Formule Confort (intérieur)</li>
               <li>Formule Extérieure</li>
             </ul>
           </div>
           <div class="formule-card">
             <div class="formule-name">Intermédiaire</div>
-            <div class="formule-price">70€<span>/prestation</span></div>
+            <div class="formule-price">110€<span>/prestation</span></div>
             <div class="formule-duration">⏱ Durée moyenne : 3h30 – 4h30</div>
             <ul class="formule-items">
-              <li>Formule Confort + Déperlante</li>
-              <li>OU Formule Prestige + Extérieure</li>
+              <li>Confort + Déperlante</li>
+              <li>OU Prestige + Extérieure</li>
             </ul>
           </div>
           <div class="formule-card featured">
             <div class="formule-badge">Premium</div>
             <div class="formule-name">Concession</div>
-            <div class="formule-price">80€<span>/prestation</span></div>
+            <div class="formule-price">120€<span>/prestation</span></div>
             <div class="formule-duration">⏱ Durée moyenne : 4h – 5h</div>
             <ul class="formule-items">
-              <li>Formule Prestige (intérieure)</li>
-              <li>Formule Déperlante (extérieure)</li>
+              <li>Formule Prestige (intérieur)</li>
+              <li>Formule Déperlante (extérieur)</li>
               <li>Le traitement le plus complet</li>
             </ul>
           </div>
         </div>
-      </div>
 
-      <!-- DETAILING & RÉNOVATION -->
-      <div class="tab-content" id="tab-detailing">
-        <div class="detailing-intro">
-          <strong>Prestations 100% sur-mesure</strong> — Chaque intervention est adaptée à l'état et aux besoins spécifiques de votre véhicule.
-          Les tarifs sont établis sur devis après diagnostic. Contactez-moi pour obtenir une estimation personnalisée.
+        <div style="margin-top:2rem; margin-bottom:2.5rem; background: rgba(255,214,0,0.05); border: 1px solid rgba(255,214,0,0.25); border-radius: 8px; padding: 1.1rem 1.5rem; display:flex; align-items:center; gap:1rem; flex-wrap:wrap;">
+          <span style="display:inline-block; background:rgba(255,214,0,0.15); border:1px solid rgba(255,214,0,0.4); color:var(--gold); font-size:0.62rem; font-weight:600; letter-spacing:0.15em; text-transform:uppercase; padding:0.2rem 0.75rem; border-radius:100px; white-space:nowrap;">Professionnel & flotte</span>
+          <span style="color:var(--muted); font-size:0.85rem; line-height:1.5;">Vous gérez plusieurs véhicules ? Nous proposons des tarifs adaptés aux professionnels et aux flottes, établis sur devis selon le volume. <a href="rendez-vous.html" style="color:var(--gold); text-decoration:none; font-weight:500;">Nous contacter →</a></span>
         </div>
-        <div class="detailing-grid">
-          <div class="detailing-card">
-            <div class="detailing-card-badge">Sur devis</div>
-            <div class="detailing-card-name">Detailing sur-mesure</div>
-            <div class="detailing-card-desc">Une prestation 100% personnalisée et adaptée à vos besoins. Cette liste contient uniquement des exemples de ce que nous proposons.</div>
-            <div class="detailing-duration">⏱ Durée moyenne : à définir</div>
-            <ul class="formule-items">
-              <li>Sorties de grange</li>
-              <li>Véhicules agricoles, engins de chantier, poids lourds, etc.</li>
-              <li>Nettoyage avec démontage (roues, sièges, moquettes…)</li>
-              <li>Rénovation totale des joints et/ou plastiques extérieurs (nettoyage, ponçage, soin) - matière neuve</li>
-              <li>Polissage d'éléments extérieurs et/ou rayures</li>
-            </ul>
-            <div class="detailing-price-note">Tarif sur-mesure — devis gratuit</div>
-          </div>
-        </div>
-      </div>
 
-      <!-- OPTIONS -->
-      <div class="tab-content" id="tab-options">
+        <div class="tarifs-category-sep" style="margin-top:0;">
+          <span class="tarifs-cat-label">Options</span>
+          <span class="tarifs-cat-line"></span>
+        </div>
+        <p style="color:var(--muted); font-size:0.85rem; margin-bottom:1.5rem; font-weight:300;">Options disponibles en complément de toute formule.</p>
         <div class="options-list">
-          <div class="option-card">
-            <div class="option-info">
-              <div class="option-name">Rénovation des optiques</div>
-              <div class="option-desc">Polissage complet pour retirer l'oxydation et les micro-rayures. Idéal avant le contrôle technique ou pour retrouver le confort de conduite de nuit.</div>
-            </div>
-            <div class="option-price">35€<br><span style="font-size:0.75rem;color:var(--muted);font-family:'DM Sans'">/&nbsp;paire</span></div>
-          </div>
           <div class="option-card">
             <div class="option-info">
               <div class="option-name">Décontamination chimique</div>
               <div class="option-desc">Décontamination ferreuse de l'entièreté de la carrosserie. Meilleure durabilité de la cire.</div>
             </div>
-            <div class="option-price">10€</div>
+            <div class="option-price">20€</div>
           </div>
           <div class="option-card">
             <div class="option-info">
               <div class="option-name">Poils d'animaux</div>
               <div class="option-desc">Pour les véhicules avec une forte présence de poils. Nettoyage en profondeur de l'habitacle.</div>
             </div>
-            <div class="option-price">20€</div>
+            <div class="option-price">20€<br><span style="font-size:0.75rem;color:var(--muted);font-family:'DM Sans'">à partir de</span></div>
           </div>
           <div class="option-card">
             <div class="option-info">
               <div class="option-name">Baie moteur</div>
               <div class="option-desc">Nettoyage manuel complet du compartiment moteur, sans eau sous pression.</div>
             </div>
-            <div class="option-price">20€</div>
+            <div class="option-price">40€</div>
           </div>
           <div class="option-card">
             <div class="option-info">
               <div class="option-name">Longue distance</div>
               <div class="option-desc">Pour les prestations situées à plus de 20 km de notre secteur.</div>
             </div>
-            <div class="option-price">5€<br><span style="font-size:0.75rem;color:var(--muted);font-family:'DM Sans'">/&nbsp;20 km sup.</span></div>
+            <div class="option-price">5€<br><span style="font-size:0.75rem;color:var(--muted);font-family:'DM Sans'">/ 20 km sup.</span></div>
           </div>
           <div class="option-card">
             <div class="option-info">
               <div class="option-name">Grands gabarits</div>
               <div class="option-desc">Pour les véhicules de +5 places et les utilitaires.</div>
             </div>
-            <div class="option-price">10€<br><span style="font-size:0.75rem;color:var(--muted);font-family:'DM Sans'">à partir de</span></div>
+            <div class="option-price">20€<br><span style="font-size:0.75rem;color:var(--muted);font-family:'DM Sans'">à partir de</span></div>
           </div>
           <div class="option-card">
             <div class="option-info">
-              <div class="option-name">Imprévu</div>
+              <div class="option-name">Situation imprévue</div>
               <div class="option-desc">Vomi, moisissure importante ou toute situation extrême. Sur devis.</div>
             </div>
-            <div class="option-price">10€<br><span style="font-size:0.75rem;color:var(--muted);font-family:'DM Sans'">à partir de</span></div>
+            <div class="option-price">20€<br><span style="font-size:0.75rem;color:var(--muted);font-family:'DM Sans'">à partir de</span></div>
           </div>
         </div>
-      </div>
 
-      <!-- CANAPÉS ET TAPISSERIES -->
-      <div class="tab-content" id="tab-autre">
-        <div class="detailing-intro">
-          <strong>Prestations à domicile</strong> — Chaque intervention est adaptée à vos besoins, nous venons à vous.
-          Les tarifs sont établis sur devis après diagnostic. Contactez-moi pour obtenir une estimation personnalisée.
+        <div class="tarifs-category-sep" style="margin-top:2.5rem;">
+          <span class="tarifs-cat-label">Detailing</span>
+          <span class="tarifs-cat-line"></span>
         </div>
         <div class="detailing-grid">
           <div class="detailing-card">
             <div class="detailing-card-badge">Sur devis</div>
-            <div class="detailing-card-name">Nettoyage de canapés, fauteuils et tapis</div>
-            <div class="detailing-card-desc">Idéal pour le mobilier de maison et éléments ne pouvant être lavés facilement.</div>
-            <div class="detailing-duration">⏱ Durée moyenne : à définir</div>
+            <div class="detailing-card-name">Detailing sur-mesure</div>
+            <div class="detailing-card-desc">Pour les prestations plus spécifiques , un devis personnalisé gratuit sera établi.</div>
             <ul class="formule-items">
-              <li>Canapés</li>
-              <li>Fauteuils</li>
-              <li>Tapis</li>
-              <li>Matelas</li>
-              <li>Toutes matières — Cuir, tissu, velours…</li>
+              <li>Sortie de grange</li>
+              <li>Véhicule de collection</li>
+              <li>Polissage (partiel ou complet)</li>
+              <li>Rénovations de matières diverses (plastiques, joints, vitres...)</li>
+              <li>Démontage (habitacle, roues, autre...)</li>
             </ul>
             <div class="detailing-price-note">Tarif sur-mesure — devis gratuit</div>
           </div>
         </div>
+
+        <div class="tab-cta">
+          <a href="rendez-vous.html" class="btn-primary">Prendre rendez-vous →</a>
+          <span class="tab-cta-text">Intervention à domicile · Devis gratuit</span>
+        </div>
       </div>
 
-    </div><!-- /tarifs-inner -->
-  </div><!-- /section-inner-page -->
-</main>
+      <div class="tab-content" id="tab-renovation">
+        <div class="detailing-intro">
+          <strong>Sécurité & contrôle technique.</strong> Des optiques oxydées réduisent la visibilité nocturne jusqu'à 80 % et peuvent faire provoquer un refus de contrôle technique et une contre visite.. La rénovation redonne une transparence quasi-neuve.
+        </div>
+        <div class="formule-card">
+            <div class="formule-name">Rénovation des optiques</div>
+            <div class="formule-price">55€<span>/paire</span></div>
+            <div class="formule-duration">⏱ Durée moyenne : 1h - 1h30</div>
+            <ul class="formule-items">
+              <li>Polissage mécanique multi-étapes</li>
+              <li>Élimination de l'oxydation, du jaunissement et des micro-rayures</li>
+              <li>Traitement protecteur anti-UV</li>
+            </ul>
+        </div>
 
-<!-- FOOTER -->
-<footer>
-  <div class="footer-main">
-    <!-- Marque -->
-    <div class="footer-brand">
-      <a href="index.html"><img src="logo.png" alt="AutoMagic 33" class="footer-logo-img"></a><a href="index.html" class="footer-logo">AutoMagic</a>
-      <p class="footer-tagline">Detailing auto à domicile en Gironde. Intérieur, extérieur, options sur mesure.</p>
-      <span class="footer-badge">✦ Gironde · 33</span>
+        <div class="tab-cta">
+          <a href="rendez-vous.html" class="btn-primary">Prendre rendez-vous →</a>
+          <span class="tab-cta-text">55 € / paire · Résultat quasi-neuf garanti</span>
+        </div>
+      </div>
+
+      <div class="tab-content" id="tab-vitres">
+        <div class="detailing-intro">
+          <strong>Film homologué & pose soignée.</strong> Films conformes à la réglementation française. Intimité, confort thermique, protection UV. Tarif selon le véhicule et la surface à poser.
+        </div>
+        <div class="detailing-grid">
+          <div class="detailing-card">
+            <div class="detailing-card-badge">Sur devis</div>
+            <div class="detailing-card-name">Pose de film teinté</div>
+            <div class="detailing-card-desc">Teinture professionnelle pour vitres arrière, lunette et/ou latérales arrière. Différents niveaux de transparence disponibles.</div>
+            <ul class="formule-items">
+              <li>Films 5 %, 20 %, 35 %, 50 %, 70%, 85% selon usage</li>
+              <li>Protection UV jusqu'à 99 %</li>
+              <li>Réduction de chaleur habitacle</li>
+              <li>Pose sans bulle, finition nette</li>
+            </ul>
+            <div class="detailing-price-note">Tarif sur-mesure — devis gratuit</div>
+          </div>
+        </div>
+
+        <div class="tab-cta">
+          <a href="rendez-vous.html" class="btn-primary">Demander un devis →</a>
+          <span class="tab-cta-text">Tarif sur-mesure · Films homologués</span>
+        </div>
+      </div>
+
+      <div class="tab-content" id="tab-deflocage">
+        <div class="detailing-intro">
+          <strong>Retrait sans abîmer la carrosserie.</strong> Technique thermique ou chimique selon le support. Bandes de chantier, logos entreprise, stickers, lettrage, décoration de véhicule… Tout type d'adhésif, y compris le désiglage complet de carrosserie.
+        </div>
+        <div class="detailing-grid">
+          <div class="detailing-card">
+            <div class="detailing-card-badge">Sur devis</div>
+            <div class="detailing-card-name">Déflocage & désiglage</div>
+            <div class="detailing-card-desc">Retrait propre de tout type d'adhésif sur carrosserie, vitres ou pare-chocs, suivi d'un traitement de la colle résiduelle.</div>
+            <ul class="formule-items">
+              <li>Bandes de chantier & marquages pro</li>
+              <li>Logos & identité visuelle entreprise</li>
+              <li>Stickers, autocollants, décoration</li>
+              <li>Désiglage complet de carrosserie</li>
+              <li>Changement de couleur des logos (noir, origine, autre...)</li>
+              <li>Traitement résidus de colle </li>
+              <li>Polissage de la surface (pas de différences de teinte)</li>
+            </ul>
+            <div class="detailing-price-note">Tarif sur-mesure — devis gratuit</div>
+          </div>
+        </div>
+
+        <div class="tab-cta">
+          <a href="rendez-vous.html" class="btn-primary">Demander un devis →</a>
+          <span class="tab-cta-text">Retrait propre · Sans abîmer la carrosserie</span>
+        </div>
+      </div>
+
+      <div class="tab-content" id="tab-cieldetoit">
+        <div class="detailing-intro">
+          <strong>Rénovation & personnalisation du ciel de toit.</strong> Tissu décollé, taché, affaissé ou simplement vieilli ? Redonnez un aspect soigné à l'intérieur de votre habitacle. Remplacement du garnissage d'origine ou personnalisation avec un tissu au choix (alcantara, velours, tissu étoilé…).
+        </div>
+        <div class="detailing-grid">
+          <div class="detailing-card">
+            <div class="detailing-card-badge">À partir de 170 €</div>
+            <div class="detailing-card-name">Rénovation de ciel de toit</div>
+            <div class="detailing-card-desc">Remplacement du garnissage intérieur de toit. Résultat propre et durable, adapté à chaque véhicule.</div>
+            <ul class="formule-items">
+              <li>Nettoyage complet de la surface (résidus de colle, mousse)</li>
+              <li>Collage professionnel avec colle dédiée haute résistance</li>
+              <li>Tissu au choix : origine, noir, couleur...</li>
+              <li>Finitions soignées sur les contours et poignées</li>
+              <li>Compatible tous types de véhicules</li>
+            </ul>
+            <div class="detailing-price-note">Tarif sur-mesure — devis gratuit · à partir de 170 €</div>
+          </div>
+          <div class="detailing-card">
+            <div class="detailing-card-badge">Sur devis</div>
+            <div class="detailing-card-name">Personnalisation de ciel de toit</div>
+            <div class="detailing-card-desc">Transformez l'intérieur de votre véhicule avec un tissu premium de votre choix pour un rendu unique.</div>
+            <ul class="formule-items">
+              <li>Alcantara, velours, autre...</li>
+              <li>Large choix de coloris et matières</li>
+              <li>Pose professionnelle sans défauts ni plis</li>
+              <li>Ciel étoilé (Bicoloe, logo, étoiles filantes, etc...)</li>
+              <li>Personnalisation totale selon vos envies</li>
+            </ul>
+            <div class="detailing-price-note">Tarif sur-mesure — devis gratuit</div>
+          </div>
+        </div>
+
+        <div class="tab-cta">
+          <a href="rendez-vous.html" class="btn-primary">Demander un devis →</a>
+          <span class="tab-cta-text">Sur-mesure · À partir de 170 €</span>
+        </div>
+      </div>
     </div>
 
-    <!-- Navigation -->
+      <div class="tab-content" id="tab-personnalisation">
+        <div style="max-width:900px; margin:0 auto;">
+        <div class="detailing-intro">
+          <strong>Personnalisation & esthétique sur-mesure.</strong> Covering, leds d'ambiance, CarPlay, éléments de carrosserie… et tout ce qui peut transformer l'apparence de votre véhicule. Si vous avez une idée, on trouve une solution. Chaque projet est unique — tarif établi après échange.
+        </div>
+
+        <div class="detailing-grid detailing-grid--2col detailing-grid--perso">
+          <div class="detailing-card">
+            <div class="detailing-card-badge">Sur devis</div>
+            <div class="detailing-card-name">Covering & wrapping</div>
+            <div class="detailing-card-desc">Changement de couleur ou protection par film vinyle. Partiel ou total, mat, brillant, satiné, chromé ou effet carbone.</div>
+            <ul class="formule-items">
+              <li>Covering partiel (capot, toit, rétros…)</li>
+              <li>Covering total carrosserie</li>
+              <li>Vinyle mat, brillant, satiné, chrome, carbone</li>
+              <li>Pose professionnelle sans bulles ni jonctions visibles</li>
+            </ul>
+            <div class="detailing-price-note">Tarif sur-mesure — devis gratuit</div>
+          </div>
+          <div class="detailing-card">
+            <div class="detailing-card-badge">Sur devis</div>
+            <div class="detailing-card-name">Leds & ambiance intérieure</div>
+            <div class="detailing-card-desc">Mise en lumière de votre habitacle pour un rendu unique, discret ou spectaculaire selon vos envies.</div>
+            <ul class="formule-items">
+              <li>Leds de seuil de porte avec logo</li>
+              <li>Éclairage d'ambiance RGB multizone</li>
+              <li>Rétroéclairage tableau de bord</li>
+              <li>Éclairage de coffre ou sous-caisse</li>
+              <li>Compatible avec la plupart des véhicules</li>
+            </ul>
+            <div class="detailing-price-note">Tarif sur-mesure — devis gratuit</div>
+          </div>
+          <div class="detailing-card">
+            <div class="detailing-card-badge">Sur devis</div>
+            <div class="detailing-card-name">CarPlay & intégration multimédia</div>
+            <div class="detailing-card-desc">Installation de CarPlay sans fil, Android Auto ou écran multimédia intégré à l'habitacle d'origine.</div>
+            <ul class="formule-items">
+              <li>CarPlay sans fil (retrofit ou boîtier)</li>
+              <li>Android Auto</li>
+              <li>Écran intégré avec navigation & streaming</li>
+              <li>Caméra de recul ou 360°</li>
+              <li>Intégration propre conservant l'esthétique d'origine</li>
+            </ul>
+            <div class="detailing-price-note">Tarif sur-mesure — devis gratuit</div>
+          </div>
+          <div class="detailing-card">
+            <div class="detailing-card-badge">Sur devis</div>
+            <div class="detailing-card-name">Éléments de carrosserie & look sportif</div>
+            <div class="detailing-card-desc">Pose, remplacement ou mise en valeur d'éléments de carrosserie pour un look plus affirmé.</div>
+            <ul class="formule-items">
+              <li>Pose de spoiler, becquet, lèvre de pare-chocs</li>
+              <li>Remplacement / laquage de rétroviseurs</li>
+              <li>Barres de toit, déflecteurs</li>
+              <li>Noircissement chrome (blackout)</li>
+              <li>Pose de film phares (fumé, ambré…)</li>
+            </ul>
+            <div class="detailing-price-note">Tarif sur-mesure — devis gratuit</div>
+          </div>
+        </div>
+
+        <div class="detailing-intro" style="margin-top: 2rem; border: 1px solid rgba(255,214,0,0.2); background: rgba(255,214,0,0.04); border-radius: 8px; padding: 1.2rem 1.5rem;">
+          <strong style="color: var(--gold);">Vous avez un projet qui ne rentre dans aucune case ?</strong> Covering partiel d'une pièce spécifique, personnalisation intérieure, ajout d'un élément unique… Si c'est de l'esthétique auto, on peut très probablement le faire. Contactez-nous pour en parler.
+        </div>
+
+        <div class="tab-cta">
+          <a href="rendez-vous.html" class="btn-primary">Demander un devis →</a>
+          <span class="tab-cta-text">100% sur-mesure · Devis gratuit après échange</span>
+        </div>
+        </div><!-- end centered wrapper -->
+      </div>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="footer-main">
+    <div class="footer-brand">
+      <a href="index.html"><img src="logo.png" alt="AutoMagic 33" class="footer-logo-img"></a><a href="index.html" class="footer-logo">AutoMagic</a>
+      <p class="footer-tagline">Esthétique automobile à domicile en Gironde. Detailing, rénovation, personnalisation.</p>
+      <span class="footer-badge">✦ Gironde · 33</span>
+    </div>
     <div class="footer-col">
       <div class="footer-col-title">Navigation</div>
       <a href="index.html">Accueil</a>
-      <a href="qui-sommes-nous.html">Qui sommes-nous</a>
-      <a href="infos.html">Infos</a>
+      <a href="qui-sommes-nous.html">À propos</a>
       <a href="galerie.html">Galerie</a>
       <a href="tarifs.html">Tarifs</a>
+      <a href="faq.html">FAQ</a>
       <a href="contact.html">Contact</a>
       <a href="rendez-vous.html">Prendre rendez-vous</a>
     </div>
-
-    <!-- Prestations -->
     <div class="footer-col">
       <div class="footer-col-title">Prestations</div>
-      <span>Nettoyage intérieur</span>
-      <span>Lavage extérieur</span>
-      <span>Formules complètes</span>
-      <span>Rénovation optiques</span>
-      <span>Detailing sur mesure</span>
+      <a href="tarifs.html#nettoyage">Nettoyage & Detailing</a>
+      <a href="tarifs.html#renovation">Rénovation de phares</a>
+      <a href="tarifs.html#vitres">Vitres teintées</a>
+      <a href="tarifs.html#deflocage">Déflocage & désiglage</a>
+      <a href="tarifs.html#cieldetoit">Ciel de toit</a>
+      <a href="tarifs.html#personnalisation">Personnalisation</a>
     </div>
-
-    <!-- Contact -->
     <div class="footer-col">
       <div class="footer-col-title">Contact</div>
       <a href="tel:0764436728">07 64 43 67 28</a>
@@ -317,7 +482,6 @@
       <a href="https://maps.app.goo.gl/5RrxEkA9PpwBNwDk7" target="_blank" rel="noopener">Google Maps</a>
     </div>
   </div>
-
   <div class="footer-bottom">
     <span class="footer-copy">© 2026 AutoMagic 33 · Cestas, Gironde</span>
     <div class="footer-bottom-links">
@@ -331,19 +495,20 @@
 
 <script src="main.js"></script>
 <script>
-  // Gestion des onglets — spécifique à la page tarifs
   function showTab(id, btn) {
     document.querySelectorAll('.tab-content').forEach(t => t.classList.remove('active'));
     document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
     document.getElementById('tab-' + id).classList.add('active');
-    btn.classList.add('active');
+    if (btn) btn.classList.add('active');
   }
-
-  // Lire ?tab= dans l'URL et activer le bon onglet
+  // Support both ?tab=xxx and #xxx
+  const validTabs = ['nettoyage','renovation','vitres','deflocage','cieldetoit','personnalisation'];
+  const hash = window.location.hash.replace('#','');
   const tabParam = new URLSearchParams(window.location.search).get('tab');
-  if (tabParam) {
-    const btn = document.querySelector(`.tab-btn[onclick*="'${tabParam}'"]`);
-    if (btn) showTab(tabParam, btn);
+  const target = validTabs.includes(hash) ? hash : (validTabs.includes(tabParam) ? tabParam : null);
+  if (target) {
+    const btn = document.querySelector(`.tab-btn[onclick*="'${target}'"]`);
+    showTab(target, btn);
   }
 </script>
 </body>

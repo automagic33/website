@@ -35,11 +35,12 @@ nav {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 1.2rem 4rem;
+  padding: 1.2rem 2.5rem;
   background: rgba(8,8,8,0.92);
   backdrop-filter: blur(16px);
   border-bottom: 1px solid var(--border);
   transition: padding 0.3s;
+  gap: 1rem;
 }
 
 .nav-logo {
@@ -54,8 +55,9 @@ nav {
 
 .nav-links {
   display: flex;
-  gap: 2.5rem;
+  gap: 1.4rem;
   list-style: none;
+  flex-shrink: 1;
 }
 
 .nav-links a {
@@ -452,6 +454,21 @@ nav {
 .tab-content { display: none; }
 .tab-content.active { display: block; }
 
+.tab-cta {
+  margin-top: 2.5rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+.tab-cta-text {
+  color: var(--muted);
+  font-size: 0.9rem;
+  font-family: 'DM Sans', sans-serif;
+}
+
 .formule-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -612,6 +629,26 @@ nav {
   gap: 1.5rem;
 }
 
+.detailing-grid--2col {
+  grid-template-columns: repeat(2, 1fr);
+  align-items: start;
+}
+
+.detailing-grid--perso {
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media (max-width: 760px) {
+  .detailing-grid--2col {
+    grid-template-columns: 1fr;
+  }
+  .detailing-grid--perso {
+    max-width: 100%;
+  }
+}
+
 .detailing-card {
   background: var(--surface);
   border: 1px solid var(--border);
@@ -638,6 +675,8 @@ nav {
   padding: 0.2rem 0.65rem;
   border-radius: 100px;
   margin-bottom: 0.8rem;
+  min-width: 90px;
+  text-align: center;
 }
 
 .detailing-card-name {
@@ -1001,10 +1040,13 @@ footer {
 /* ===================== RESPONSIVE ===================== */
 
 /* Tablette */
-@media (max-width: 900px) {
+@media (max-width: 1100px) {
   nav { padding: 1rem 1.5rem; }
   .nav-links { display: none; }
   .burger { display: flex; }
+}
+
+@media (max-width: 900px) {
   .section-inner-page { padding: 6rem 1.5rem 3.5rem; }
   .about-grid { grid-template-columns: 1fr; gap: 2.5rem; }
   .about-visual { display: none; }

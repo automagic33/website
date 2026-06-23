@@ -65,3 +65,4 @@ function initSlider(id) {
 
 initSlider('ba1');
 initSlider('ba2');
+initSlider('ba3');
